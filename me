@@ -10,6 +10,9 @@
     <title>Here we go again</title>
     <link rel="icon" type="img/x-icon" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\favicon (1).ico">
 <style>
+*{
+  box-sizing: border-box;
+}
 .header {
   list-style-type: none;
   margin: 0;
@@ -57,44 +60,57 @@ li a:hover {
 }
 
 body{
+  display: block;
     margin: 0;
-    background-image: url('https://avatars.mds.yandex.net/i?id=1e83ec1b536793d454c7ac4e59d2a298_l-5222188-images-thumbs&n=13');
+    background-image: url('https://avatars.mds.yandex.net/i?id=a0dc7721925da544acbcc48b14be5581_l-5221549-images-thumbs&n=13');
     background-repeat: no-repeat;
     background-attachment: fixed;  
     background-size: cover;
 }
 
 .card{
+  float: right;
   background-color: rgba(46, 46, 46, 0.7);
   color: aliceblue;
-  width: 300px;
-  padding: 20px;
+  width: 30%;
+  margin: 7px;
   border-radius: 10px 10px;
-  padding: 15px;
+  padding: 20px;
+  padding-bottom: 50px;
 }
 .card img {
+  width: 100%;
   border-radius: 10px 10px;
 }
 
 section{
-  width: 50%;
-  height: 270px;
+  margin-top: 7px;
+  margin-left: 20px;
   padding: 15px;
   background-color: rgba(46, 46, 46, 0.7);
   color: aliceblue;
-  margin-top: 10px;
-  margin-left: 25%;
   border-radius: 1%;
-}
-
-aside{
-  float: right;
+  display:inline-table;
+  width: 50%;
 }
 
 section h1{
   color: #c9fac4;
 }
 
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  .card, section{
+    width: 97%;
+    margin: 10px;  
+    
+  }
+  .card img {
+    width: 100%;
+    margin-left: 25%;
+    margin-right: 25%;
+}
+}
 .btn{
   text-decoration: none;
   background-color: #fff;
@@ -110,11 +126,15 @@ section h1{
   color: aliceblue;
 }
 footer{
-  margin-top: 14%;
+margin-bottom: 0px;
+  margin-top: 7px;
+  padding: 10px;
+  text-align: center;
   height: 130px;
   background-color: rgba(46, 46, 46, 0.7);
   color: aliceblue;
 }
+
 </style>
 </head>
 <body>
