@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="description" content="Free Web tutorials">
-  <meta name="keywords" content="HTML, CSS, JavaScript">
-  <meta name="author" content="Sofiya">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="description" content="Free Web tutorials">
+    <meta name="keywords" content="HTML, CSS, JavaScript">
+    <meta name="author" content="Sofiya">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Here we go again</title>
     <link rel="icon" type="img/x-icon" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\favicon (1).ico">
-<style>
-*{
+<style>*{
   box-sizing: border-box;
+}
+#myCanvas{
+  color:aliceblue;
 }
 .header {
   list-style-type: none;
@@ -22,24 +24,20 @@
   width: 100%;
 }
 
-.header li {
-  float:inline-end;
+.header li, form{
+ float:inline-end;
 }
 
-.header li a {
+.header li, a, form{
   display: block;
   color: aliceblue;
   text-align: center;
-  padding: 16px;
+  padding: 2%;
   text-decoration: none;
 }
 
 li a:hover {
   background-color: #111111;
-}
-
-.head{
-  padding-top: 16px;
 }
 
 .green{
@@ -106,7 +104,6 @@ section h1{
     
   }
   .card img {
-    width: 100%;
     margin-left: 25%;
     margin-right: 25%;
 }
@@ -126,22 +123,35 @@ section h1{
   color: aliceblue;
 }
 footer{
-margin-bottom: 0px;
-  margin-top: 7px;
+  margin: 10px;
+  display: flex;
   padding: 10px;
-  text-align: center;
   height: 130px;
   background-color: rgba(46, 46, 46, 0.7);
   color: aliceblue;
 }
-
 </style>
 </head>
 <body>
+  <nav>
+   
+        
+    <ul class="header"> 
+        <canvas id="myCanvas" width="200" height="100">
+        </canvas>
+        <form action="/action_page.php">
+            <input type="search" id="gsearch" name="gsearch" placeholder="Search...">
+            <input type="submit" value="Submit">
+          </form>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+    </nav>
 <aside class="card">
     <figure><a class="head"><img src="https://4.downloader.disk.yandex.ru/preview/96e704713163c9e1f205cebfe8d67fa0a082c8767bebfe2b71630c5c233df52e/inf/ELFaR6-k-77rjf6KkK3f4QWpfgw7uXFSly_GOD05-fuCs4Rrpzg9YccctxyyAFdDEtPTUm2Q3370cog07jz0kw%3D%3D?uid=669349820&filename=2024-05-21%2013-08-34_1718397397.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964"     
         style="width:240px;height:240px" alt="me lookig for the right"></a></figure><figcaption><h1>Sofiya &#128151;</h1></figcaption>
-    
 <p class="green"> Juniour fronted developer</p>
     <p class="text">Chekhow city </p><p> +79969713131</p> <p>begimkulovasofiyaya@gmail.com</p>
 <p class="green">Skills</p>
@@ -151,7 +161,7 @@ margin-bottom: 0px;
     <p class="text">2014-2017 Buhgaltering, Marketing... </p>
 <p class="green">Experiense</p>
     <p class="text"></p>
-    <a href="second.html" class="link">Press me, i have a link</a>
+    <a href="second.html" class="btn">Press me, i have a link</a>
 </aside>
 
 <section>
@@ -215,6 +225,12 @@ margin-bottom: 0px;
         "And keep me company" (I can get a little lonely)
         I said, "Oh, l-"</p>
  </section>
+ <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "60px white";
+    ctx.strokeText("Hello",10,50);
+    </script>
 <footer><p class="green">Across the internet</p><nav>@begisofi</nav></footer>
 </body>
 </html>
