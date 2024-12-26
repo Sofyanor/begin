@@ -6,47 +6,116 @@
     <meta name="keywords" content="HTML, CSS, JavaScript">
     <meta name="author" content="Sofiya">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <title>Here we go again</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia">
     <link rel="icon" type="img/x-icon" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\favicon (1).ico">
-<style>*{
+<style>
+*{
+  margin: 0;
   box-sizing: border-box;
 }
+::selection {
+  color: rgba(46, 46, 46, 0.7);
+  background-color: aliceblue;
+}
+
+body{
+  font: 1em sans-serif;
+    margin: 0;
+    background-image: url('https://avatars.mds.yandex.net/i?id=a0dc7721925da544acbcc48b14be5581_l-5221549-images-thumbs&n=13');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
 #myCanvas{
   color:aliceblue;
 }
+
 .header {
+  height: 80px;
   list-style-type: none;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: rgba(46, 46, 46, 0.7);
   width: 100%;
+  text-align: center;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
 }
 
-.header li, form{
- float:inline-end;
-}
 
-.header li, a, form{
-  display: block;
+.header li {float:left;}
+
+.header li, a{
+  display: inline-block;
   color: aliceblue;
   text-align: center;
-  padding: 2%;
+  text-decoration: none;
+  padding: 10px 16px;
+}
+
+li a:hover {background-color: #111111;}
+
+form {
+  margin-top: 20px;
+  border-radius: 5%;
+  right: 10px;
+  float: right;
+}
+
+@media screen and (max-width: 900px) {
+  ul.header 
+  form {float: none;}
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
 }
 
-li a:hover {
-  background-color: #111111;
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(0,0,0);
+}
+ 
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 
 .green{
-    size:30cap;
+    padding: 15px;
+    font-size: 1.2em;
     color: #c9fac4;
 }
 
 .text{
+  padding: 5px;
     color: rgb(255, 255, 255);
     size:15cap;
     font-style:normal;
@@ -58,15 +127,6 @@ li a:hover {
     font-style: italic;
 }
 
-body{
- font: 1em Courier New;
-  display: block;
-    margin: 0;
-    background-image: url('https://avatars.mds.yandex.net/i?id=a0dc7721925da544acbcc48b14be5581_l-5221549-images-thumbs&n=13');
-    background-repeat: no-repeat;
-    background-attachment: fixed;  
-    background-size: cover;
-}
 
 .card{
   float: right;
@@ -78,29 +138,52 @@ body{
   padding: 20px;
   padding-bottom: 50px;
 }
+
 .card figcaption {
-font-family: "Sofia", sans-serif;
+  text-align: center;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 3px 3px 3px #ababab;
+  padding: 15px;
 }
-.card img {
-  width: 100%;
-  border-radius: 10px 10px;
+
+.dropdown {
+  padding-left: 25%;
+  position: relative;
+  display: inline-block;
 }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
 
 section{
   margin-top: 7px;
   margin-left: 20px;
-  padding: 15px;
+  padding: 20px;
   background-color: rgba(46, 46, 46, 0.7);
   color: aliceblue;
   border-radius: 1%;
-  display:inline-table;
+  display: auto;
   width: 50%;
+  z-index: -1;
 }
 
 section h1{
- color: rgba(46, 46, 46, 0.7);
- text-shadow: 0 0 4px aliceblue, 0 0 25px blue, 0 0 5px darkblue;
-
+  padding: 15px;
+  color: rgba(46, 46, 46, 0.7);
+  text-shadow: 0 0 4px aliceblue, 0 0 5px darkblue;
+  
 }
 
 @media only screen and (max-width: 1000px) {
@@ -130,34 +213,46 @@ section h1{
   color: aliceblue;
 }
 footer{
-  margin: 10px;
+  margin: 0;
+  margin-top: 5px;
   display: flex;
   padding: 10px;
   height: 130px;
   background-color: rgba(46, 46, 46, 0.7);
   color: aliceblue;
 }
-</style>
 
+</style>
 </head>
-<body>
-  <nav>
-    <ul class="header"> 
-        <canvas id="myCanvas" width="200" height="100">
-        </canvas>
-        <form action="/action_page.php">
-            <input type="search" id="gsearch" name="gsearch" placeholder="Search...">
-            <input type="submit" value="Submit">
-          </form>
+<body> 
+<div class="header"> 
+    <nav>
+       <ul>
         <li><a href="#home">Home</a></li>
         <li><a href="#news">News</a></li>
         <li><a href="#contact">Contact</a></li>
-        <li><a href="#about">About</a></li>
-      </ul>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">About</a>
+            <div class="dropdown-content">
+              <a href="#">Link 1</a>
+              <a href="#">Link 2</a>
+              <a href="#">Link 3</a>
+            </div>      </ul>
+        <form>
+            <input type="search" id="gsearch" name="gsearch" placeholder="Search..." >
+            <input type="submit" value="Submit">
+        </form>
     </nav>
+</div>
 <aside class="card">
-    <figure><a class="head"><img src="https://4.downloader.disk.yandex.ru/preview/96e704713163c9e1f205cebfe8d67fa0a082c8767bebfe2b71630c5c233df52e/inf/ELFaR6-k-77rjf6KkK3f4QWpfgw7uXFSly_GOD05-fuCs4Rrpzg9YccctxyyAFdDEtPTUm2Q3370cog07jz0kw%3D%3D?uid=669349820&filename=2024-05-21%2013-08-34_1718397397.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964"     
-        style="width:240px;height:240px" alt="me lookig for the right"></a></figure><figcaption><h1>Sofiya &#128151;</h1></figcaption>
+    <div class="dropdown">
+     <img src="https://4.downloader.disk.yandex.ru/preview/96e704713163c9e1f205cebfe8d67fa0a082c8767bebfe2b71630c5c233df52e/inf/ELFaR6-k-77rjf6KkK3f4QWpfgw7uXFSly_GOD05-fuCs4Rrpzg9YccctxyyAFdDEtPTUm2Q3370cog07jz0kw%3D%3D?uid=669349820&filename=2024-05-21%2013-08-34_1718397397.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964"     
+        style="width:240px;height:240px" alt="me lookig to the right"><figcaption><h1>Sofiya &#128151;</h1></figcaption>
+        <div class="dropdown-content">
+        <img src="https://4.downloader.disk.yandex.ru/preview/96e704713163c9e1f205cebfe8d67fa0a082c8767bebfe2b71630c5c233df52e/inf/ELFaR6-k-77rjf6KkK3f4QWpfgw7uXFSly_GOD05-fuCs4Rrpzg9YccctxyyAFdDEtPTUm2Q3370cog07jz0kw%3D%3D?uid=669349820&filename=2024-05-21%2013-08-34_1718397397.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964"
+        style="width:400px;height:400px" alt="me lookig to the right">
+        </div>    
+    </div>
 <p class="green"> Juniour fronted developer</p>
     <p class="text">Chekhow city </p><p> +79969713131</p> <p>begimkulovasofiyaya@gmail.com</p>
 <p class="green">Skills</p>
@@ -231,7 +326,6 @@ footer{
         "And keep me company" (I can get a little lonely)
         I said, "Oh, l-"</p>
  </section>
-<article> Today nothing i have to do, just read some text</article>
  <script>
     var c = document.getElementById("myCanvas");
     var ctx = c.getContext("2d");
