@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style> 
+*{
+  margin: 0;
+  box-sizing: border-box;
+}
+::selection {
+  color: rgba(46, 46, 46, 0.7);
+  background-color: aliceblue;
+}
+
+body{
+  font: 1em sans-serif;
+    margin: 0;
+    background-image: url('https://avatars.mds.yandex.net/i?id=a0dc7721925da544acbcc48b14be5581_l-5221549-images-thumbs&n=13');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+#myCanvas{
+  color:aliceblue;
+}
+
+.header {
+  height: 80px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  background-color: rgba(46, 46, 46, 0.7);
+  width: 100%;
+  text-align: center;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+}
+
+
+.header li {float:left;}
+
+.header li, a{
+  display: inline-block;
+  color: aliceblue;
+  text-align: center;
+  text-decoration: none;
+  padding: 10px 16px;
+}
+
+li a:hover {background-color: #111111;}
+
+form {
+  margin-top: 20px;
+  border-radius: 5%;
+  right: 10px;
+  float: right;
+}
+
+@media screen and (max-width: 900px) {
+  ul.header 
+  form {float: none;}
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: rgba(0,0,0);
+}
+ 
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.green{
+    padding: 15px;
+    font-size: 1.2em;
+    color: #c9fac4;
+}
+
+.text{
+  padding: 5px;
+    color: rgb(255, 255, 255);
+    size:15cap;
+    font-style:normal;
+}
+
+.about{
+    size: 20cap;
+    color: blue;
+    font-style: italic;
+}
+
+
+.card{
+  float: right;
+  background-color: rgba(46, 46, 46, 0.7);
+  color: aliceblue;
+  width: 30%;
+  margin: 7px;
+  border-radius: 10px 10px;
+  padding: 20px;
+  padding-bottom: 50px;
+}
+
+.card figcaption {
+  text-align: center;
+  font-family: "Sofia", sans-serif;
+  text-shadow: 3px 3px 3px #ababab;
+  padding: 15px;
+}
+
+.dropdown {
+  padding-left: 25%;
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+
+section{
+  margin-top: 7px;
+  margin-left: 20px;
+  padding: 20px;
+  background-color: rgba(46, 46, 46, 0.7);
+  color: aliceblue;
+  border-radius: 1%;
+  display: auto;
+  width: 50%;
+  z-index: -1;
+}
+
+section h1{
+  padding: 15px;
+  color: rgba(46, 46, 46, 0.7);
+  text-shadow: 0 0 4px aliceblue, 0 0 5px darkblue;
+  
+}
+
+@media only screen and (max-width: 1000px) {
+  /* For mobile phones: */
+  .card, section{
+    width: 97%;
+    margin: 10px;  
+    
+  }
+  .card img {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+}
+.btn{
+  text-decoration: none;
+  background-color: #fff;
+  color: #111111;
+  padding: 15px;
+  margin-left: 25%;
+  border-radius: 10px 10px;
+  bottom: none;
+}
+
+.btn:hover {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+}
+footer{
+  margin: 0;
+  margin-top: 5px;
+  display: flex;
+  padding: 10px;
+  height: 130px;
+  background-color: rgba(46, 46, 46, 0.7);
+  color: aliceblue;
+}
+    
+</style>
+
+</head>
+<body>
+<table>
+    <caption><h2>My family</h2></caption>
+    <tr>
+        <th>Begimkulova Sofiya Vladimirovna</th>
+        <th>Kholopova Inessa Vladimirovna</th>
+        <th>Begimkulov Bogdan Vladimirovich</th>
+        <th>Begimkulov Vladimir Kurbanovich</th>
+    </tr>
+    <tr>
+        <td><img src="https://3.downloader.disk.yandex.ru/preview/773f1dca6630f2d8c0bcdd5a153d465560d0517fa0abb067d1a20b09cad05ec7/inf/gS_cZUVg_xLPI1vNw7bXPzr9NOJynMf7NHURFbt-HTCh2juduP7UIRTCe9ISRhf_GRWLRTwXjakKIFVhs48KiQ%3D%3D?uid=669349820&filename=2024-07-02%2013-02-17.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+        <td><img src="https://1.downloader.disk.yandex.ru/preview/2ecb542355f0a83d7f488b45a44bc4b96dbf9ffdf32f6729b8f8bf9296df8164/inf/VyWDnPffa2al75qd9T6s4QppEzpG4ps6cOheKGC86J7-LPtJ866GTrqUDljfZQHm8aOQkV6gejjQVHmzymznyA%3D%3D?uid=669349820&filename=2024-03-25%2017-31-36.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+        <td><img src="https://2.downloader.disk.yandex.ru/preview/fc5dbc06bf5527ffb98807f57842867ed5c2d21475ccf6b86a3e329744a90330/inf/4kW9oXH7wcp5ySdJpmwRMnyzIdzwzinwaTj0-3NGdO1AxjBW1O02yEgkoMPHjzlS9hGx4wbNqj-_D2pUtgtauw%3D%3D?uid=669349820&filename=2024-09-12%2016-51-26.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+        <td><img src="https://2.downloader.disk.yandex.ru/preview/886f16f59482528701e3fb09bb3cd7c8384f05f40ce5555b48e656bc1b0f4ac9/inf/Wp1da7iuYsbfjD6Ap5j41MkeH4nSgptNyy3-m3ee6gUEgkUzYzq2fGbk1AkeBRfGlQ0qV1zfdCI_WxFXVphUzg%3D%3D?uid=669349820&filename=2023-06-20%2016-41-49.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+    </tr>
+    <tr>
+        <td><img src="https://3.downloader.disk.yandex.ru/preview/773f1dca6630f2d8c0bcdd5a153d465560d0517fa0abb067d1a20b09cad05ec7/inf/gS_cZUVg_xLPI1vNw7bXPzr9NOJynMf7NHURFbt-HTCh2juduP7UIRTCe9ISRhf_GRWLRTwXjakKIFVhs48KiQ%3D%3D?uid=669349820&filename=2024-07-02%2013-02-17.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+        <td><img src="https://1.downloader.disk.yandex.ru/preview/2ecb542355f0a83d7f488b45a44bc4b96dbf9ffdf32f6729b8f8bf9296df8164/inf/VyWDnPffa2al75qd9T6s4QppEzpG4ps6cOheKGC86J7-LPtJ866GTrqUDljfZQHm8aOQkV6gejjQVHmzymznyA%3D%3D?uid=669349820&filename=2024-03-25%2017-31-36.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+        <td><img src="https://2.downloader.disk.yandex.ru/preview/fc5dbc06bf5527ffb98807f57842867ed5c2d21475ccf6b86a3e329744a90330/inf/4kW9oXH7wcp5ySdJpmwRMnyzIdzwzinwaTj0-3NGdO1AxjBW1O02yEgkoMPHjzlS9hGx4wbNqj-_D2pUtgtauw%3D%3D?uid=669349820&filename=2024-09-12%2016-51-26.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+        <td><img src="https://2.downloader.disk.yandex.ru/preview/886f16f59482528701e3fb09bb3cd7c8384f05f40ce5555b48e656bc1b0f4ac9/inf/Wp1da7iuYsbfjD6Ap5j41MkeH4nSgptNyy3-m3ee6gUEgkUzYzq2fGbk1AkeBRfGlQ0qV1zfdCI_WxFXVphUzg%3D%3D?uid=669349820&filename=2023-06-20%2016-41-49.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
+    </tr>
+</table>
+    <div class="gallery">
+        <a target="_blank" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215020.jpg">
+        <img src="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215020.jpg" alt="Marta">
+        <div class="desc">Just Marta</div></a>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215448.jpg">
+        <img src="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215448.jpg" alt="Marta">
+        <div class="desc">Just Marta</div></a>
+    </div>
+    <div class="gallery">
+        <a target="_blank" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215652.jpg">
+        <img src="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215652.jpg" alt="Marta">
+        <div class="desc">Just Marta</div></a>
+    </div>
+</body>
+</html>
