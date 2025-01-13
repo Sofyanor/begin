@@ -1,157 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<style> 
- 
-* {
-    box-sizing: border-box;
-    margin: 0;
+<style>
+#myImg {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-body {
-    background-image: linear-gradient(to right, white,orange, red);
+#myImg:hover {opacity: 0.7;}
 
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
 }
 
-.header {
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
-    color: aliceblue;
-    height: 70px;
-    display: block;
+/* Modal Content (image) */
+.modal-content {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation */
+.modal-content, #caption {  
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)} 
+  to {transform: scale(1)}
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
     width: 100%;
-    text-align: center;padding-top: 15px;
-}
-
-a{
-    text-decoration: none;
-}
-
-table{
-    border-collapse: collapse;
-    width: 100%;
-    
-}
-
-th:nth-child(even){
-    background-color: rgba(183, 250, 250, 0.4);
-}
-
-td {
-    height: 150px;
-    padding: 5px;
-}
-
-th {
-    padding: 8px;
-    border-bottom: 1px solid #DDD;
-    text-align: left;
-    overflow: hidden;
-}
-
-tr :hover {
-    background-color: #D6EEEE;
-}
-
-td>img {    
-    width: 70%;
-    height: 100%;
-    border-radius: 5%;
-    border: 2px solid #050505;
-}
-div.gallery {
-    border-radius: 10px 10px;
-    width: 30%;
-    margin: 5px;
-    border: 1px solid #ccc;
-    float: left;
-    transform: width 1s, height 2s;
-}
-  
-
-div.gallery img {
-    position: relative;
-    width: 100%;
-    height: auto;
-    border-radius: 10px 10px;
-}
-
-.gallery:hover {
-    margin-left: 25%;
-    width: 50%;
-    height: 40%;
-    z-index: 1;
-    position: absolute;
-}
-  
-div.desc {
-    padding: 15px;
-    text-align: center;
-}
-
-.gallery:after {
-    content: "";
-    display: table;
-    clear: both;
   }
-
-@media only screen and (max-width: 1500px) {
-    div.gallery img{
-      width: 100%;
-      margin: 6px 0;
-    }
-  }
-  
-  @media only screen and (max-width: 500px) {
-    div.gallery img{
-      width: 100%;
-    }
-  }
-  
+}
 </style>
-
 </head>
 <body>
-    <div class="header">
-        <h1>Hello!!!</h1>
-    </div>
-<table>
-    <caption><h2>My family</h2></caption>
-    <tr>
-        <th>Begimkulova Sofiya Vladimirovna</th>
-        <th>Kholopova Inessa Vladimirovna</th>
-        <th>Begimkulov Bogdan Vladimirovich</th>
-        <th>Begimkulov Vladimir Kurbanovich</th>
-    </tr>
-    <tr>
-        <td><img src="https://3.downloader.disk.yandex.ru/preview/773f1dca6630f2d8c0bcdd5a153d465560d0517fa0abb067d1a20b09cad05ec7/inf/gS_cZUVg_xLPI1vNw7bXPzr9NOJynMf7NHURFbt-HTCh2juduP7UIRTCe9ISRhf_GRWLRTwXjakKIFVhs48KiQ%3D%3D?uid=669349820&filename=2024-07-02%2013-02-17.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-        <td><img src="https://1.downloader.disk.yandex.ru/preview/2ecb542355f0a83d7f488b45a44bc4b96dbf9ffdf32f6729b8f8bf9296df8164/inf/VyWDnPffa2al75qd9T6s4QppEzpG4ps6cOheKGC86J7-LPtJ866GTrqUDljfZQHm8aOQkV6gejjQVHmzymznyA%3D%3D?uid=669349820&filename=2024-03-25%2017-31-36.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-        <td><img src="https://2.downloader.disk.yandex.ru/preview/fc5dbc06bf5527ffb98807f57842867ed5c2d21475ccf6b86a3e329744a90330/inf/4kW9oXH7wcp5ySdJpmwRMnyzIdzwzinwaTj0-3NGdO1AxjBW1O02yEgkoMPHjzlS9hGx4wbNqj-_D2pUtgtauw%3D%3D?uid=669349820&filename=2024-09-12%2016-51-26.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-        <td><img src="https://2.downloader.disk.yandex.ru/preview/886f16f59482528701e3fb09bb3cd7c8384f05f40ce5555b48e656bc1b0f4ac9/inf/Wp1da7iuYsbfjD6Ap5j41MkeH4nSgptNyy3-m3ee6gUEgkUzYzq2fGbk1AkeBRfGlQ0qV1zfdCI_WxFXVphUzg%3D%3D?uid=669349820&filename=2023-06-20%2016-41-49.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-    </tr>
-    <tr>
-        <td><img src="https://3.downloader.disk.yandex.ru/preview/773f1dca6630f2d8c0bcdd5a153d465560d0517fa0abb067d1a20b09cad05ec7/inf/gS_cZUVg_xLPI1vNw7bXPzr9NOJynMf7NHURFbt-HTCh2juduP7UIRTCe9ISRhf_GRWLRTwXjakKIFVhs48KiQ%3D%3D?uid=669349820&filename=2024-07-02%2013-02-17.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-        <td><img src="https://1.downloader.disk.yandex.ru/preview/2ecb542355f0a83d7f488b45a44bc4b96dbf9ffdf32f6729b8f8bf9296df8164/inf/VyWDnPffa2al75qd9T6s4QppEzpG4ps6cOheKGC86J7-LPtJ866GTrqUDljfZQHm8aOQkV6gejjQVHmzymznyA%3D%3D?uid=669349820&filename=2024-03-25%2017-31-36.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-        <td><img src="https://2.downloader.disk.yandex.ru/preview/fc5dbc06bf5527ffb98807f57842867ed5c2d21475ccf6b86a3e329744a90330/inf/4kW9oXH7wcp5ySdJpmwRMnyzIdzwzinwaTj0-3NGdO1AxjBW1O02yEgkoMPHjzlS9hGx4wbNqj-_D2pUtgtauw%3D%3D?uid=669349820&filename=2024-09-12%2016-51-26.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-        <td><img src="https://2.downloader.disk.yandex.ru/preview/886f16f59482528701e3fb09bb3cd7c8384f05f40ce5555b48e656bc1b0f4ac9/inf/Wp1da7iuYsbfjD6Ap5j41MkeH4nSgptNyy3-m3ee6gUEgkUzYzq2fGbk1AkeBRfGlQ0qV1zfdCI_WxFXVphUzg%3D%3D?uid=669349820&filename=2023-06-20%2016-41-49.JPG&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=669349820&tknv=v2&size=1920x964" alt=""></td>
-    </tr>
-</table>
-    <div class="gallery">
-        <a target="_blank" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215020.jpg">
-        <img src="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215020.jpg" alt="Marta">
-        <div class="desc">Just Marta</div></a>
-    </div>
-    <div class="gallery">
-        <a target="_blank" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215448.jpg">
-        <img src="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215448.jpg" alt="Marta">
-        <div class="desc">Just Marta</div></a>
-    </div>
-    <div class="gallery">
-        <a target="_blank" href="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215652.jpg">
-        <img src="C:\Users\махабхарат\Desktop\proects\present\icons;img\IMG_20241224_215652.jpg" alt="Marta">
-        <div class="desc">Just Marta</div></a>
-    </div>
+
+<h2>Image Modal</h2>
+
+<p>Here, we use CSS to create a modal (dialog box) that is hidden by default.</p>
+<p>We use JavaScript to trigger the modal and to display the current image inside the modal when it is clicked on. Also note that we use the value from the image's "alt" attribute as an image caption text inside the modal.</p>
+<p>Don't worry if you do not understand the code right away. When you are done with CSS, go to our JavaScript Tutorial to learn more.</p>
+
+<img id="myImg" src="img_lights.jpg" alt="Northern Lights, Norway" width="300" height="200">
+
+<!-- The Modal -->
+<div id="myModal" class="modal">
+  <span class="close">&times;</span>
+  <img class="modal-content" id="img01">
+  <div id="caption"></div>
+</div>
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the image and insert it inside the modal - use its "alt" text as a caption
+var img = document.getElementById('myImg');
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+img.onclick = function(){
+  modal.style.display = "block";
+  modalImg.src = this.src;
+  captionText.innerHTML = this.alt;
+}
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() { 
+  modal.style.display = "none";
+}
+</script>
+
 </body>
 </html>
+
+
